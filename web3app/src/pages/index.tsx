@@ -126,8 +126,6 @@ const Home: NextPage = () => {
           />
         </Box>
 
-        
-
       </VStack>
 
     </>
