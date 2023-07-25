@@ -7,6 +7,7 @@ import { Text, Button } from '@chakra-ui/react'
 import { useState,useEffect } from 'react'
 import {ethers} from "ethers"
 import ReadERC20 from "../components/ReadERC20"
+import TransferERC20  from "../components/TransferERC20"
 
 //declare 关键字用于告诉编译器有一个已经存在的变量、函数、类或命名空间，它们已经定义在其他地方，
 //例如在前端开发中使用的 window 对象。在这种情况下，declare 关键字声明了一个全局变量或命名空间，
@@ -86,6 +87,9 @@ const Home: NextPage = () => {
       <Heading as="h3"  my={4}>Explore Web3</Heading>     
 
       <VStack>
+
+
+        {/* read */}
         <Box w='100%' my={4}>
         {currentAccount  
           ? <Button type="button" w='100%' onClick={onClickDisconnect}>
@@ -112,6 +116,17 @@ const Home: NextPage = () => {
             currentAccount={currentAccount}
           />
         </Box>
+
+        {/* write */}
+        <Box  mb={0} p={4} w='100%' borderWidth="1px" borderRadius="lg">
+          <Heading my={4}  fontSize='xl'>Transfer Classtoken</Heading>
+          <TransferERC20 
+            addressContract='0x5FbDB2315678afecb367f032d93F642f64180aa3'
+            currentAccount={currentAccount}
+          />
+        </Box>
+
+        
 
       </VStack>
 
